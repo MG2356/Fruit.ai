@@ -35,8 +35,4 @@ const questionResponses = {
 };
 
 Project pics
-![alt text](Screenshot_16-9-2024_31621_localhost.jpeg) ![alt text](Screenshot_16-9-2024_31453_localhost.jpeg) ![alt text](Screenshot_16-9-2024_31358_localhost.jpeg) ![alt text](Screenshot_16-9-2024_31328_localhost.jpeg) ![alt text](Screenshot_16-9-2024_31233_localhost.jpeg)
-![alt text](image.png)
-
-Project video
-<video controls src="20240915-2208-52.9047257.mp4" title="Title"></video>
+https://docs.google.com/document/d/1baXNBQiFHHMDCAr2J5cUbgW9gPzzNAQwyTi-Y84M1vI/edit?usp=sharing
