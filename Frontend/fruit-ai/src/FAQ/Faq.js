@@ -23,7 +23,7 @@ function Faq() {
     <div className="app-container">
       {/* FAQ Section */}
       <div className="faq-section">
-        <h1>FAQ Section</h1>
+        <h1>FaQ Section</h1>
         <div className="faq-container">
         {faqs.map((faq, index) => (
   <FaqItem

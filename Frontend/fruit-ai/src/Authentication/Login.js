@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {apiUrl} from '../utils/app.utils' 
 
 const Login = () => {
@@ -69,7 +69,8 @@ const Login = () => {
         </p>
         <div className="tab-container">
           <span className="active-tab">Login</span>
-          <span>Register</span>
+          <span>              <Link to="/signup">
+          Register </Link></span>
         </div>
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="input-container">

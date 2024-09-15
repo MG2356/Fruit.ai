@@ -51,13 +51,18 @@ const ChatBot = () => {
   // Generate bot response based on user message
   const generateResponse = (message) => {
     const questionResponses = {
-      'how are you': 'I am just a bot, but thanks for asking!',
-      'good': 'Good Morning!',
-      'what is your name': 'I am a chatbot.',
-      'hello': 'Hi!',
-      'java': 'Java is a popular programming language.',
-      'me': 'Munish Goel',
+      'who are you': 'I am a chatbot designed to assist you.',
+      'good morning': 'Good morning! Hope you have a great day ahead!',
+      'what can you do': 'I can answer basic questions and assist with simple tasks.',
+      'bye': 'Goodbye! Have a nice day!',
+      'python': 'Python is a versatile and popular programming language known for its simplicity.',
+      'your creator': 'I was developed by OpenAI.',
+      'thanks': 'You’re welcome!',
+      'help': 'Sure! How can I assist you?',
+      'machine learning': 'Machine learning is a subset of artificial intelligence that allows systems to learn from data.',
+      'who am I': 'You are Munish Goel, a Computer Science Engineering student.',
     };
+    
 
     const response = questionResponses[message.toLowerCase()] || "I'm not sure how to answer that. Try asking something else!";
     addBotMessage(response);

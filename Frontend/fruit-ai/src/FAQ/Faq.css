@@ -52,12 +52,14 @@
   
   /* FAQ text */
   .faq-text h3 {
-    color: #ff4b4b;
+    color: #EE0A22;
+    font-weight: bold;
     font-size: 1rem;
     margin: 0;
   }
   .faq-imageName p{
-    color: #ff4b4b;
+    color: #EE0A22;
+    font-weight: bold;
     font-size: 1rem;
     margin-left: -10vh;
     padding-top: 19vh;
@@ -65,7 +67,8 @@
   .faq-text p {
     font-size: 0.9rem;
     margin: 5px 0 0 0;
-    color: #333;
+    color: #0386D0;
+    ;
   }
   
   .product-detail-container {

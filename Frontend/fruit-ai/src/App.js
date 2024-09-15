@@ -8,12 +8,14 @@ import Faq from './FAQ/Faq';
 import Translator from './Translator/Translator';
 import FaqDetail from './FAQ/FaqDetail';
 import ChatBot from './Chatbot/ChatBot';
+import Signup from './Authentication/Signup';
 const App = () => {
   return (
 <>
 <Router>
       <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/home" element={<Home />} />
       <Route path="/chat" element={<ChatBot />} />
 
