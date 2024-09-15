@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { apiUrl } from '../utils/app.utils';
 function Translator() {
   const [inputText, setInputText] = useState('');
   const [detectedLanguage, setDetectedLanguage] = useState('');
@@ -19,7 +19,7 @@ function Translator() {
   // Function to detect the language
   const detectLanguage = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/detect', {
+      const response = await fetch(`${apiUrl}/api/detect`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ function Translator() {
   // Function to translate the text
   const translateText = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/translate", {
+      const response = await fetch(`${apiUrl}/api/translate`, {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json'

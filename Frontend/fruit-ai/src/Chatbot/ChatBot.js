@@ -52,10 +52,10 @@ const ChatBot = () => {
   const generateResponse = (message) => {
     const questionResponses = {
       'how are you': 'I am just a bot, but thanks for asking!',
+      'good': 'Good Morning!',
       'what is your name': 'I am a chatbot.',
       'hello': 'Hi!',
       'java': 'Java is a popular programming language.',
-      'good': 'Good Morning!',
       'me': 'Munish Goel',
     };
 

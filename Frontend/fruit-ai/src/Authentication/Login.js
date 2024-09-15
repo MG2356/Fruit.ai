@@ -1,134 +1,10 @@
-// import React, { useState } from "react";
-// import axios from "axios";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import "./Login.css";
-// import { useNavigate } from "react-router-dom";
-// const Login = () => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-//   const [showPassword, setShowPassword] = useState(false);
-//   const navigate = useNavigate();
-
-//   // Toggle password visibility
-//   const togglePasswordVisibility = () => {
-//     setShowPassword(!showPassword);
-//   };
-
-//   // Handle form submission
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       const response = await axios.post("http://127.0.0.1:5000/login", {
-//         username,
-//         password
-//       });
-      
-
-//       // Assuming the API returns a status code of 200 on success
-//       if (response.status === 200) {
-//         const { token } = response.data;
-
-//         // Save token in localStorage
-//         localStorage.setItem("authToken", token);
-//         toast.success("Login successful!");
-//         navigate("/Home");
-//       }
-//     } catch (error) {
-//       console.error("Login error:", error);
-//       toast.error("Login failed. Please try again.");
-//     }
-//   };
-
-//   return (
-//     <div className="login-page">
-//       <ToastContainer /> {/* Toastify container to show notifications */}
-//       <div className="login-container">
-//         <h2>Login</h2>
-//         <p>
-//           By signing in you are agreeing to our{" "}
-//           <a href="#privacy">Term and privacy policy</a>
-//         </p>
-//         <div className="tab-container">
-//           <span className="active-tab">Login</span>
-//           <span>Register</span>
-//         </div>
-//         <form className="login-form" onSubmit={handleSubmit}>
-//           <div className="input-container">
-//             <i className="icon email-icon">
-//               <i className="fas fa-envelope"></i>
-//             </i>
-//             <input
-//               type="email"
-//               placeholder="Email Address"
-//             //   value={email}
-//               onChange={(e) => setUsername(e.target.value)}
-//               required
-//             />
-//           </div>
-//           <div className="input-container">
-//             <i className="icon password-icon">
-//               <i className="fas fa-lock"></i>
-//             </i>
-//             <input
-//               type={showPassword ? "text" : "password"}
-//               placeholder="Password"
-//             //   value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               required
-//             />
-//             <i className="icon eye-icon" onClick={togglePasswordVisibility}>
-//               {showPassword ? (
-//                 <i className="fa fa-eye-slash"></i>
-//               ) : (
-//                 <i className="fas fa-eye"></i>
-//               )}
-//             </i>
-//           </div>
-//           <div className="options-container">
-//             <label>
-//               <input type="checkbox" /> Remember password
-//             </label>
-//             <a href="#forgot" className="forgot-password">
-//               Forget password
-//             </a>
-//           </div>
-//           <button type="submit" className="login-button">
-//             Login
-//           </button>
-//         </form>
-//         <div className="social-container">
-//           <p>or connect with</p>
-//           <div className="social-icons">
-//             <a href="#facebook" className="social-icon facebook-icon">
-//               <i className="fas fa-facebook"></i>
-//             </a>
-//             <a href="#instagram" className="social-icon instagram-icon">
-//               <i className="fas fa-instagram"></i>
-//             </a>
-//             <a href="#pinterest" className="social-icon pinterest-icon">
-//               <i className="fas fa-pinterest"></i>
-//             </a>
-//             <a href="#linkedin" className="social-icon linkedin-icon">
-//               <i className="fas fa-linkedin"></i>
-//             </a>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
-
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import {apiUrl} from '../utils/app.utils' 
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -147,10 +23,11 @@ const Login = () => {
 
     try {
       // Make POST request to backend for login
-      const response = await axios.post("http://127.0.0.1:5000/login", {
+      const response = await axios.post(`${apiUrl}/login`, {
         username,
         password
       });
+      
 
       // Assuming the backend responds with the token in the response body
       if (response.status === 200 && response.data.access_token) {
@@ -163,7 +40,7 @@ const Login = () => {
         toast.success("Login successful!");
 
         // Redirect to a protected route (e.g., dashboard)
-        navigate("/Home");
+        navigate("/Home" ,{ state: { loggedIn: true } });
       } else {
         toast.error("Invalid credentials. Please try again.");
       }
@@ -228,8 +105,9 @@ const Login = () => {
           </div>
           <div className="options-container">
             <label>
-              <input type="checkbox" /> Remember password
+              <input type="checkbox" /> 
             </label>
+            Remember password
             <a href="#forgot" className="forgot-password">
               Forget password
             </a>

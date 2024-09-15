@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"; // Import Link for navigation
 import "./Faq.css";
-
+import { apiUrl } from "../utils/app.utils";
 function Faq() {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
     // Fetch data from the API when the component mounts
     axios
-      .get("http://127.0.0.1:5000/faqs")
+      .get(`${apiUrl}/faqs`)
       .then((response) => {
         setFaqs(response.data); // Assuming the data comes as an array of FAQ items
         console.log(response.data);
@@ -30,6 +30,7 @@ function Faq() {
     key={index}
     id={faq.id} // Ensure id is passed correctly here
     image={faq.image}
+    imageName={faq.imageName}
     question={faq.question}
     answer={faq.answer}
   />
@@ -40,13 +41,17 @@ function Faq() {
     </div>
   );
 }
-function FaqItem({ id, image, question, answer }) {
+function FaqItem({ id, image,imageName, question, answer }) {
   console.log("Passed ID to FaqItem:", id); // Debugging
   return (
     <Link to={`/faqs/${id}`}>
       <div className="faq-item">
         <div className="faq-image">
           <img src={image} alt={question} />
+          
+        </div>
+        <div className="faq-imageName">
+          <p>{imageName}</p>
         </div>
         <div className="faq-text">
           <h3>{question}</h3>

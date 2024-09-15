@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom"; // To extract the id from the URL
 // import "../Faq.css";
-
+import { apiUrl } from "../utils/app.utils";
 function FaqDetail() {
   const { id } = useParams(); // Extract the FAQ id from the route parameter
   const [product, setProduct] = useState(null);
@@ -12,7 +12,7 @@ function FaqDetail() {
 
     // Fetch product details based on the id
     axios
-      .get(`http://127.0.0.1:5000/faqs/${id}`)
+      .get(`${apiUrl}/faqs/${id}`)
 
       .then((response) => {
         console.log("Product data:", response.data); // Debugging API response
