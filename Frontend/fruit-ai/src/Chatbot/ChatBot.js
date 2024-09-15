@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../Chat.css'; // Ensure this file contains necessary styling for the chat UI
+import './Chat.css'; // Ensure this file contains necessary styling for the chat UI
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Bootstrap icons for the send and clear buttons
 import people from '../people.jpg';
 const ChatBot = () => {

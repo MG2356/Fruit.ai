@@ -1,15 +1,13 @@
 import React from 'react';
 //import './App.css';
-import Chat from './Chat';
-import Login from './Login';
+import Login from './Authentication/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Faq from './Faq';
-import Translator from './Translator';
+import Home from './Home/Home';
+import About from './About/About';
+import Faq from './FAQ/Faq';
+import Translator from './Translator/Translator';
 import FaqDetail from './FAQ/FaqDetail';
-import ChatUI from './ChatUI';
-import ChatBot from './Translator/ChatBot';
+import ChatBot from './Chatbot/ChatBot';
 const App = () => {
   return (
 <>
@@ -17,7 +15,6 @@ const App = () => {
       <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/chatui" element={<ChatUI />} />
       <Route path="/chat" element={<ChatBot />} />
 
       <Route path="/about" element={<About />} />
