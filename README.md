@@ -35,4 +35,4 @@ const questionResponses = {
 };
 
 Project pics
-https://docs.google.com/document/d/1baXNBQiFHHMDCAr2J5cUbgW9gPzzNAQwyTi-Y84M1vI/edit?usp=sharing
+https://drive.google.com/drive/folders/1AwPAFhuT57AS4AbZ-vFSiid2HWskE9yw?usp=sharing
